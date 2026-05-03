@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structura Bot - Documentation & Aide</title>
+    <style>
+        :root {
+            --discord-blurple: #5865F2;
+            --discord-dark: #23272a;
+            --discord-grey: #2c3e50;
+            --bg-color: #f1f2f6;
+            --text-muted: #636e72;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--discord-grey);
+            background-color: var(--bg-color);
+            margin: 0; padding: 0;
+        }
+        header {
+            background-color: var(--discord-blurple);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .btn-invite {
+            display: inline-block;
+            background-color: var(--discord-blurple);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+        .btn-invite:hover { background-color: #4752c4; transform: translateY(-2px); }
+        
+        h2 { color: var(--discord-dark); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+        h3 { margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e1e4e8;
+            transition: 0.2s;
+        }
+        .feature-card:hover { border-color: var(--discord-blurple); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .description { font-size: 0.95em; color: var(--text-muted); margin-bottom: 10px; }
+        .command-box { font-family: 'Courier New', Courier, monospace; font-size: 0.85em; color: #2d3436; background: #dfe6e9; padding: 10px; border-radius: 6px; display: block; }
+
+        .badge { font-size: 0.7em; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; font-weight: bold; }
+        .badge-admin { background: #ffeaa7; color: #d63031; }
+        .badge-staff { background: #81ecec; color: #0984e3; }
+
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Structura Bot</h1>
+    <p>Le bot tout-en-un pour bâtir et gérer des communautés solides.</p>
+</header>
+
+<div class="container">
+    
+    <div style="text-align: center;">
+        <a href="https://discord.com/oauth2/authorize?client_id=1470516566348005513&permissions=8&scope=bot+applications.commands" class="btn-invite">Ajouter Structura au serveur</a>
+    </div>
+
+    <section id="features">
+        <h2>📚 Liste détaillée des commandes</h2>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <h3>🏗️ Structure <span class="badge badge-admin">Admin</span></h3>
+                <p class="description">Permet de créer et d'organiser automatiquement les salons et catégories via des templates ou des sauvegardes.</p>
+                <code class="command-box">/creer_serveur, /generer, /template, /snapshot, /organise, /site_live</code>
+            </div>
+
+            <div class="feature-card">
+                <h3>🛡️ Modération <span class="badge badge-staff">Staff</span></h3>
+                <p class="description">Outils pour maintenir l'ordre : bannissements, avertissements (warns) et isolation des membres perturbateurs.</p>
+                <code class="command-box">/warn, /kick, /ban, /unban, /mute, /clear, /prison, /lockdown</code>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎭 Rôles</h3>
+                <p class="description">Automatise l'attribution des grades, que ce soit via des boutons cliquables ou à l'arrivée d'un membre.</p>
+                <code class="command-box">/creer_roles, /boutons_roles, /auto_role</code>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎫 Tickets</h3>
+                <p class="description">Crée un système de support privé où les membres peuvent discuter directement avec le staff.</p>
+                <code class="command-box">/setup_tickets</code>
+            </div>
+
+            <div class="feature-card">
+                <h3>💰 Économie</h3>
+                <p class="description">Un jeu de monnaie virtuelle pour dynamiser le serveur (travail quotidien, virements, classement des riches).</p>
+                <code class="command-box">/solde, /daily, /work, /deposer, /retirer, /donner, /rich</code>
+            </div>
+
+            <div class="feature-card">
+                <h3>📊 Niveaux & XP</h3>
+                <p class="description">Récompense l'activité des membres par de l'expérience et un système de niveaux compétitif.</p>
+                <code class="command-box">/niveau, /classement, /xp_add, /xp_reset</code>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚙️ Configuration <span class="badge badge-admin">Admin</span></h3>
+                <p class="description">Paramétrage avancé des messages de bienvenue, des logs (journaux) et des permissions du staff.</p>
+                <code class="command-box">/config_logs, /config_bienvenue, /config_niveaux, /config_staff, /config</code>
+            </div>
+
+            <div class="feature-card">
+                <h3>🗑️ Suppression <span class="badge badge-admin">Admin</span></h3>
+                <p class="description">Nettoyage massif des salons, rôles ou catégories pour réinitialiser une partie du serveur.</p>
+                <code class="command-box">/supprimer_categories, /supprimer_salons, /supprimer_roles, /reset_serveur</code>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="tos">
+        <h2>⚖️ Conditions d'Utilisation</h2>
+        <p>L'utilisation de Structura implique le respect des règles de Discord. L'utilisateur est responsable des actions effectuées avec le bot. Tout abus (raid, spam via le bot) entraînera une révocation de l'accès.</p>
+    </section>
+
+    <section id="privacy">
+        <h2>🔒 Politique de Confidentialité</h2>
+        <p><strong>Zéro donnée stockée :</strong> Nous ne collectons pas les messages ni les informations personnelles. Le bot traite les identifiants de serveurs (IDs) uniquement pour fonctionner en temps réel. Aucune donnée n'est revendue.</p>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 Équipe Structura | Fait avec passion pour la communauté Discord.
+</footer>
+
+</body>
+</html>
